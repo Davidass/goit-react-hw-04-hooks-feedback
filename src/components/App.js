@@ -15,8 +15,7 @@ function App() {
 
   const feedback = { good, neutral, bad };
 
-  const onLeaveFeedback = event => {
-    const { option } = event.target;
+  const onLeaveFeedback = option => {
     switch (option) {
       case 'good':
         setGood(prevGood => prevGood + 1);
