@@ -13,8 +13,6 @@ function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const feedback = { good, neutral, bad };
-
   const onLeaveFeedback = option => {
     switch (option) {
       case 'good':
@@ -45,7 +43,10 @@ function App() {
   return (
     <Container>
       <Section title="Please leave feedback">
-        <FeedbackOptions options={feedback} onLeaveFeedback={onLeaveFeedback} />
+        <FeedbackOptions
+          options={['good', 'neutral', 'bad']}
+          onLeaveFeedback={onLeaveFeedback}
+        />
       </Section>
       <Section title="Statistics">
         {totalFeedback === 0 ? (
